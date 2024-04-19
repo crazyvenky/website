@@ -3,54 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* Add your CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 960px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        .portfolio-item {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>Responsive HTML Template</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
 
-<header>
-    <h1>My Portfolio</h1>
-</header>
+    <nav class="nav">
+        <input class="nav__trigger-input" type="checkbox" id="trigger" aria-label="open the navigation"/>
+        <label class="nav__trigger-finger" for="trigger">
+          <span></span>
+        </label>
+        <ul class="nav__list">
+         
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                ABOUT
+              </span>
+            </a>
+            <input class="nav__submenu-trigger-input" type="checkbox" id="submenu-trigger" />
+            <label class="nav__submenu-trigger-finger" for="submenu-trigger"></label>
+            <ul class="nav__list-child">
+              <li class="nav__item">
+                <a href="#hoi" class="nav__link">
+                  <span class="nav__text">
+                    ABOUT ME
+                  </span>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#hoi" class="nav__link">
+                  <span class="nav__text">
+                    MY DAY
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                CERTIFICATES
+              </span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                PROJECTS
+              </span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#hoi" class="nav__link">
+              <span class="nav__text">
+                BLOGS
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+      <main>
+        <h1>
+          VENKATA SIVA KUMAR<span>PARUVADA</span>
+        </h1>
+        <p>
+          
+Welcome to my website! I'm absolutely captivated by the world of data science and its profound impact on shaping our understanding of the world. As an avid explorer of data, I revel in the excitement of uncovering hidden gems within vast datasets, extracting invaluable insights, and weaving compelling narratives that drive informed decisions.<br><br>
 
-<div class="container">
-    <div class="portfolio-item">
-        <h2>Project 1</h2>
-        <p>This is a description of my first project. It's awesome!</p>
-    </div>
+Data science isn't just a passion for me – it's a calling. I'm drawn to its transformative potential, the way it empowers organizations to innovate, adapt, and thrive in an ever-evolving landscape. Whether it's predicting consumer trends, optimizing operational efficiency, or revolutionizing healthcare, data science holds the key to unlocking endless possibilities.<br><br>
 
-    <div class="portfolio-item">
-        <h2>Project 2</h2>
-        <p>This is a description of my second project. It's even more awesome!</p>
-    </div>
+But beyond the technical prowess, what truly sets me apart is my unwavering commitment to excellence and my ability to translate complex data into actionable strategies. With a keen eye for detail and a knack for problem-solving, I thrive on challenges and relish the opportunity to make a tangible impact.<br><br>
 
-    <!-- Add more portfolio items as needed -->
+So, whether you're a fellow data enthusiast eager to explore the frontiers of analytics or a recruiter on the lookout for top talent in the field, I invite you to join me on this exhilarating journey. Together, let's harness the power of data to drive innovation, inspire change, and shape the future of our world.
 
-</div>
 
+        </p>
+       
+      </main>
+
+
+
+
+
+    <!-- Link to JavaScript file -->
+    <script src="test.js"></script>
 </body>
 </html>
+
