@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .news-item:hover {
+            box-shadow: 0 9px 20px rgba(0, 0, 0, 0.2);
+        }
+        .news-item h2 {
+            margin-top: 0;
+        }
+        .news-item p {
+            margin-bottom: 10px;
+        }
+        .news-item img {
+            display: block;
+            max-width: 100%;
+            margin: 10px auto;
+        }
+        .news-item a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Latest News</h1>
+        <ul class="news-list" id="newsList"></ul>
+    </div>
+
+    <script>
+        // JavaScript
+        const apiKey = "bd55fe83b41343489e0ab889c9656eaa";
+        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+        count apiUrl = 'https://newsapi.org/v2/everything?q=AI+data+science+machine+learning+prompt+engineering+ChatGPT+LLM+neural+networks+crypto&apiKey=${apikey}'
+        // Fetch news data from API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const newsList = document.getElementById('newsList');
+                data.articles.forEach(article => {
+                    const newsItem = document.createElement('li');
+                    newsItem.classList.add('news-item');
+                    newsItem.innerHTML = `
+                        <h2>${article.title}</h2>
+                        <img src="${article.urlToImage}" alt="${article.title}">
+                        <p>${article.description}</p>
+                        <a href="${article.url}" target="_blank">Read more</a>
+                    `;
+                    newsList.appendChild(newsItem);
+                });
+            })
+            .catch(error => console.log(error));
+    </script>
+</body>
+</html>
