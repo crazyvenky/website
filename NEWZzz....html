@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Times New Roman, Sans-Serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .news-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .news-item h2 {
+            margin-top: 0;
+        }
+        .news-item p {
+            margin-bottom: 10px;
+        }
+        .news-item img {
+            display: block;
+            max-width: 100%;
+            margin: 10px auto;
+        }
+        .news-item a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .keyword-input {
+            margin-bottom: 20px;
+            width: calc(100% - 40px); /* Adjusted width to accommodate icon */
+            padding: 10px;
+            font-size: 16px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png'); /* Search icon */
+            background-position: 10px center;
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding-left: 40px; /* Added padding for icon */
+        }
+        .keyword-input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .search-button {
+            display: none; /* Hide the button */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NEWZzz...</h1>
+        <form id="newsForm">
+            <input type="text" class="keyword-input" id="keywordInput" placeholder="Search for keywords (eg: AI).">
+            <button type="submit" class="search-button"></button>
+        </form>
+        <ul class="news-list" id="newsList"></ul>
+    </div>
+
+    <script>
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchDefaultNews();
+        });
+
+        document.getElementById('newsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            fetchSortedNews();
+        });
+
+        function fetchDefaultNews() {
+            const apiKey = "bd55fe83b41343489e0ab889c9656eaa";
+            const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    displayNews(data.articles);
+                })
+                .catch(error => console.log(error));
+        }
+
+        function fetchSortedNews() {
+            const apiKey = "bd55fe83b41343489e0ab889c9656eaa";
+            const keywordInput = document.getElementById('keywordInput').value;
+            let apiUrl = `https://newsapi.org/v2/everything?q=AI+machine+learning+crypto`;
+            
+            if (keywordInput) {
+                apiUrl += `+${keywordInput}`;
+            }
+
+            apiUrl += `&apiKey=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    displayNews(data.articles);
+                })
+                .catch(error => console.log(error));
+        }
+
+        function displayNews(articles) {
+            const newsList = document.getElementById('newsList');
+            newsList.innerHTML = ''; // Clear previous news
+            articles.forEach(article => {
+                const newsItem = document.createElement('li');
+                newsItem.classList.add('news-item');
+                newsItem.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <img src="${article.urlToImage ? article.urlToImage : 'placeholder.jpg'}" alt="${article.title}">
+                    <p>${article.description}</p>
+                    <a href="${article.url}" target="_blank">Read more</a>
+                `;
+                newsList.appendChild(newsItem);
+            });
+        }
+    </script>
+</body>
+</html>
