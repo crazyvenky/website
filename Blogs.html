@@ -1,1 +1,129 @@
-coming soon...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paruvada's Blog</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #f0f0f0;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .author-info p {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .date-time {
+      font-size: 0.8rem;
+    }
+
+    .back-arrow {
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    main {
+      padding: 1rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .blog-post {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+    }
+
+    .post-date {
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
+
+    .show-more {
+      background-color: #eee;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .post-content {
+      display: none;
+    }
+
+    .blog-post.active .post-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="author-info">
+      <p>Paruvada</p>
+      <span>Venkata Siva Kumar</span>
+    </div>
+    <div class="date-time">
+      <span id="datetime"></span>
+    </div>
+    <a href="https://paruvada.online" class="back-arrow">&larr;</a>
+  </header>
+  <main>
+    <h2>Blog Posts</h2>
+    <section class="blog-post">
+      <p class="post-date">2024-05-15</p>
+      <h3>Sample Blog Title</h3>
+      <button class="show-more">Read More</button>
+      <div class="post-content">
+        <p>This is a short description of the blog post. Click "Read More" to view the full content.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Contact: e-mail: venkatesh5082931@gmail.com</p>
+  </footer>
+  <script>
+    const showMoreButtons = document.querySelectorAll('.show-more');
+    const postContents = document.querySelectorAll('.post-content');
+
+    showMoreButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        postContents[index].classList.toggle('active');
+        if (button.textContent === 'Read More') {
+          button.textContent = 'Read Less';
+        } else {
+          button.textContent = 'Read More';
+        }
+      });
+    });
+
+    const displayDateTime = () => {
+      const date = new Date();
+      const formattedDate = date.toLocaleDateString();
+      const formattedTime = date.toLocaleTimeString();
+      document.getElementById('datetime').textContent = `${formattedDate} ${formattedTime}`;
+    };
+
+    displayDateTime();
+  </script>
+</body>
+</html>
