@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,25 +61,12 @@
       margin-bottom: 5px;
     }
 
-    .show-more {
-      background-color: #eee;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-    }
-
     .post-content {
-      display: none;
-    }
-
-    .blog-post.active .post-content {
-      display: block;
     }
   </style>
 </head>
 <body>
   <header>
-     <a href="https://paruvada.online" class="back-arrow">&larr;</a>
     <div class="author-info">
       <p>Paruvada</p>
       <span>Venkata Siva Kumar</span>
@@ -86,37 +74,23 @@
     <div class="date-time">
       <span id="datetime"></span>
     </div>
-   
+    <a href="https://paruvada.online" class="back-arrow">&larr;</a>
   </header>
   <main>
     <h2>Blog Posts</h2>
     <section class="blog-post">
       <p class="post-date">2024-05-15</p>
       <h3>Sample Blog Title</h3>
-      <button class="show-more">Read More</button>
-      <div class="post-content">
-        <p>This is a short description of the blog post. Click "Read More" to view the full content.</p>
-      </div>
+      <details>
+        <summary>Short description</summary>
+        <p class="post-content">This is the full content of the blog post.</p>
+      </details>
     </section>
   </main>
   <footer>
     <p>Contact: e-mail: venkatesh5082931@gmail.com</p>
   </footer>
   <script>
-    const showMoreButtons = document.querySelectorAll('.show-more');
-    const postContents = document.querySelectorAll('.post-content');
-
-    showMoreButtons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        postContents[index].classList.toggle('active');
-        if (button.textContent === 'Read More') {
-          button.textContent = 'Read Less';
-        } else {
-          button.textContent = 'Read More';
-        }
-      });
-    });
-
     const displayDateTime = () => {
       const date = new Date();
       const formattedDate = date.toLocaleDateString();
