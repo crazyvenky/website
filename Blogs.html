@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Article Card</title>
 <style>
     body {
@@ -61,25 +62,42 @@
 </style>
 </head>
 <body>
-
 <div class="card">
-    <div class="card-header">Article Title</div>
-    <div class="card-description">Short description goes here...</div>
-    <button class="dropdown-btn" onclick="toggleDropdown()">Read More</button>
-    <div class="dropdown-content">
-        <h3>Introduction</h3>
-        <p class="Introduction">This is the introduction of the article.</p>
-        <h3 class>Body</h3>
-        <p class="Body">This is the body of the article.</p>
-        <h3>Conclusion</h3>
-        <p class="Conclusion">This is the conclusion of the article.</p>
-        <h3>References</h3>
-        <p class="References">Reference 1, Reference 2, Reference 3</p>
-        <h3>Links</h3>
-        <a class="Links" href="">link</a>
-    </div>
+<div class="card-header">1</div>
+<div class="card-description">2</div>
+<button class="dropdown-btn" onclick="toggleDropdown()">Read More</button>
+<div class="dropdown-content">
+<h3>Introduction</h3>
+<p class="Introduction">3</p>
+<h3 class="">Body</h3>
+<p class="Body">4</p>
+<h3>Conclusion</h3>
+<p class="Conclusion">5</p>
+<h3>References</h3>
+<p class="References">6</p>
+<h3>Links</h3>
+<a class="Links" href="https://paruvada.online">https://paruvada.online</a>
+</div>
 </div>
 
+<div class="card">
+<div class="card-header">Article Title</div>
+<div class="card-description">Short description goes here...</div>
+<button class="dropdown-btn" onclick="toggleDropdown()">Read More</button>
+<div class="dropdown-content">
+<h3>Introduction</h3>
+<p class="Introduction">This is the introduction of the article.</p>
+<h3 class="">Body</h3>
+<p class="Body">This is the body of the article.</p>
+<h3>Conclusion</h3>
+<p class="Conclusion">This is the conclusion of the article.</p>
+<h3>References</h3>
+<p class="References">Reference 1, Reference 2, Reference 3</p>
+<h3>Links</h3>
+<a class="Links" href="">link</a>
+</div>
+</div>
+<!-- add card above-->
 <script>
 function toggleDropdown() {
     var dropdownContent = document.querySelector('.dropdown-content');
@@ -90,6 +108,5 @@ function toggleDropdown() {
     }
 }
 </script>
-
 </body>
 </html>
