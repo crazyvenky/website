@@ -1,104 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paruvada's Blog</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article Card</title>
+<style>
     body {
-      font-family: sans-serif;
-      margin: 10px;
-      padding: 20px;
-      text-align:center;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        margin: 0;
+        padding: 0;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #f0f0f0;
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        border: 1px solid red;
     }
 
-    .author-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .card-header {
+        background-color: orange;
+        color: #000;
+        padding: 10px 20px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        margin-bottom: 10px;
     }
 
-    .author-info h1 {
-      margin-bottom: 5px;
+    .card-description {
+        background-color: #fff;
+        color: #000;
+        padding: 10px 20px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-bottom: 10px;
     }
 
-    .date-time {
-      font-size: 0.8rem;
+    .dropdown-btn {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
     }
 
-    .back-arrow {
-      text-decoration: none;
-      font-size: 1.5rem;
-      color: #000;
+    .dropdown-content {
+        display: none;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
     }
-
-    main {
-      padding: 1rem;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .blog-post {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 1rem;
-    }
-
-    .post-date {
-      font-size: 0.8rem;
-      margin-bottom: 5px;
-    }
-
-    .post-content {
-    }
-  </style>
+</style>
 </head>
 <body>
-  <header>
-    <a href="https://paruvada.online" class="back-arrow">&larr;</a>
-    <div class="author-info">
-      <h1>Paruvada</h1>
-      <span>Venkata Siva Kumar</span>
-    </div>
-    <div class="date-time">
-      <span id="datetime"></span>
-    </div>
-  </header>
-  <main>
-    <h2>Blog Posts</h2>
-    <section class="blog-post">
-      <p class="post-date">2024-05-15</p>
-      <h3>Sample Blog Title</h3>
-      <details>
-        <summary>Short description</summary>
-        <p class="post-content">This is the full content of the blog post.</p>
-      </details>
-    </section>
-  </main>
-  <footer>
-    <p>Contact: e-mail: venkatesh5082931@gmail.com</p>
-  </footer>
-  <script>
-    const displayDateTime = () => {
-      const date = new Date();
-      const formattedDate = date.toLocaleDateString();
-      const formattedTime = date.toLocaleTimeString();
-      document.getElementById('datetime').textContent = `${formattedDate} ${formattedTime}`;
-    };
 
-    displayDateTime();
-  </script>
+<div class="card">
+    <div class="card-header">Article Title</div>
+    <div class="card-description">Short description goes here...</div>
+    <button class="dropdown-btn" onclick="toggleDropdown()">Read More</button>
+    <div class="dropdown-content">
+        <h3>Introduction</h3>
+        <p class="Introduction">This is the introduction of the article.</p>
+        <h3 class>Body</h3>
+        <p class="Body">This is the body of the article.</p>
+        <h3>Conclusion</h3>
+        <p class="Conclusion">This is the conclusion of the article.</p>
+        <h3>References</h3>
+        <p class="References">Reference 1, Reference 2, Reference 3</p>
+        <h3>Links</h3>
+        <a class="Links" href="">link</a>
+    </div>
+</div>
+
+<script>
+function toggleDropdown() {
+    var dropdownContent = document.querySelector('.dropdown-content');
+    if (dropdownContent.style.display === 'block') {
+        dropdownContent.style.display = 'none';
+    } else {
+        dropdownContent.style.display = 'block';
+    }
+}
+</script>
+
 </body>
 </html>
