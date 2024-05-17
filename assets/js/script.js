@@ -192,27 +192,8 @@ const srtop = ScrollReveal({
     reset: true
 });
 
-/* SCROLL HOME AND ABOUT */
-const intervalOptions = { interval: 500 };
-srtop.reveal('.home .image, .home .linkedin, .home .github, .home .twitter, .home .telegram, .home .instagram, .home .dev', intervalOptions);
-const revealOptions = { delay: 150 };
-srtop.reveal('.home .content h3, .home .content p, .home .content .btn, .about .content h3, .about .content .tag, .about .content p, .about .content .box-container, .about .content .resumebtn', revealOptions);
-
-
-/* SCROLL SKILLS */
-srtop.reveal('.skills .container', { interval: 200 });
-srtop.reveal('.skills .container .bar', { delay: 400 });
-
-/* SCROLL EDUCATION */
-srtop.reveal('.education .box', { interval: 200 });
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box', { interval: 200 });
-
-/* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline', { delay: 400 });
-srtop.reveal('.experience .timeline .container', { interval: 400 });
-
-/* SCROLL CONTACT */
-srtop.reveal('.contact .container', { delay: 400 });
-srtop.reveal('.contact .container .form-group', { delay: 400 });
+/* SCROLL HOME, Skills, CONTACT, education, PROJECTS, experience & ABOUT */
+srtop.reveal('.home .image, .home .linkedin, .home .github, .home .twitter, .home .telegram, .home .instagram, .home .dev', { interval: 500 });
+srtop.reveal('.home .content h3, .home .content p, .home .content .btn, .about .content h3, .about .content .tag, .about .content p, .about .content .box-container, .about .content .resumebtn', { delay: 150 });
+srtop.reveal('.skills .container, .education .box, .work .box, .experience .timeline .container', { interval: 150 });
+srtop.reveal('.skills .container .bar, .experience .timeline, .contact .container, .contact .container .form-group', { delay: 300 });
