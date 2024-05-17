@@ -192,18 +192,18 @@ const srtop = ScrollReveal({
     reset: true
 });
 
-/* SCROLL HOME */
+/* SCROLL HOME 
 srtop.reveal('.home .content h3', { delay: 200 });
 srtop.reveal('.home .content p', { delay: 200 });
-srtop.reveal('.home .content .btn', { delay: 200 });
+srtop.reveal('.home .content .btn', { delay: 200 }); 
 
 srtop.reveal('.home .image', { delay: 400 });
 srtop.reveal('.home .linkedin', { interval: 600 });
-srtop.reveal('.home .github', { interval: 800 });
-srtop.reveal('.home .twitter', { interval: 1000 });
+srtop.reveal('.home .github', { interval: 600 });
+srtop.reveal('.home .twitter', { interval: 600 });
 srtop.reveal('.home .telegram', { interval: 600 });
 srtop.reveal('.home .instagram', { interval: 600 });
-srtop.reveal('.home .dev', { interval: 600 });
+srtop.reveal('.home .dev', { interval: 600 }); */
 
 /* SCROLL ABOUT 
 srtop.reveal('.about .content h3', { delay: 200 });
@@ -211,9 +211,12 @@ srtop.reveal('.about .content .tag', { delay: 200 });
 srtop.reveal('.about .content p', { delay: 200 });
 srtop.reveal('.about .content .box-container', { delay: 200 });
 srtop.reveal('.about .content .resumebtn', { delay: 200 });  */
-const revealOptions = { delay: 200 };
-srtop.reveal('.about .content h3, .about .content .tag, .about .content p, .about .content .box-container, .about .content .resumebtn', revealOptions);
 
+srtop.reveal('.home .image', { delay: 400 });
+const intervalOptions = { interval: 600 };
+srtop.reveal('.home .linkedin, .home .github, .home .twitter, .home .telegram, .home .instagram, .home .dev', intervalOptions);
+const revealOptions = { delay: 200 };
+srtop.reveal('.home .content h3, .home .content p, .home .content .btn, .about .content h3, .about .content .tag, .about .content p, .about .content .box-container, .about .content .resumebtn', revealOptions);
 
 
 /* SCROLL SKILLS */
