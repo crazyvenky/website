@@ -42,7 +42,7 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Hema Kalyan Portfolio";
+            document.title = "Venky's Portfolio";
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
     });
@@ -205,12 +205,15 @@ srtop.reveal('.home .telegram', { interval: 600 });
 srtop.reveal('.home .instagram', { interval: 600 });
 srtop.reveal('.home .dev', { interval: 600 });
 
-/* SCROLL ABOUT */
+/* SCROLL ABOUT 
 srtop.reveal('.about .content h3', { delay: 200 });
 srtop.reveal('.about .content .tag', { delay: 200 });
 srtop.reveal('.about .content p', { delay: 200 });
 srtop.reveal('.about .content .box-container', { delay: 200 });
-srtop.reveal('.about .content .resumebtn', { delay: 200 });
+srtop.reveal('.about .content .resumebtn', { delay: 200 });  */
+const revealOptions = { delay: 200 };
+srtop.reveal('.about .content h3, .about .content .tag, .about .content p, .about .content .box-container, .about .content .resumebtn', revealOptions);
+
 
 
 /* SCROLL SKILLS */
