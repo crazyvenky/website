@@ -1,5 +1,5 @@
 https://paruvada.online
-![](https://komarev.com/ghpvc/?username=crazyvenky&color=brightgreen&style=flat-square&&abbreviated=true)
+![](https://komarev.com/ghpvc/?username=crazyvenky&color=brightgreen)
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=crazyvenky)](https://git.io/streak-stats)
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=crazyvenky)](https://github.com/anuraghazra/github-readme-stats)
